@@ -26,8 +26,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::group(['middleware' => ['jwt.verify','superuser']], function() {
     Route::get('getalluser', 'SuperAdminController@myUsers');
     Route::post('register', 'UserController@register');
-
-Route::get('shops','SuperAdminController@all_shops');
-
-
+    Route::get('shops','SuperAdminController@all_shops');
 });
